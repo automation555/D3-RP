@@ -167,6 +167,7 @@ namespace SQLite
 				var conn = GetConnection ();
 				using (conn.Lock ()) {
 					return conn.Find<T> (pk);
+					//commented 
 				}
 			});
 		}
