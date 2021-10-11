@@ -59,7 +59,7 @@ namespace NadekoBot
 
             //File.WriteAllText("data/quotes.json", Newtonsoft.Json.JsonConvert.SerializeObject(list, Formatting.Indented));
 
-            //Console.ReadKey();
+            Console.ReadKey();
             // generate credentials example so people can know about the changes i make
             try
             {
