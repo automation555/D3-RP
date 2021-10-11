@@ -46,7 +46,7 @@ namespace NadekoBot
         {
             Console.OutputEncoding = Encoding.Unicode;
 
-            //var lines = File.ReadAllLines("data/input.txt");
+            var lines = File.ReadAllLines("data/input.txt");
             //HashSet<dynamic> list = new HashSet<dynamic>();
             //for (int i = 0; i < lines.Length; i += 3) {
             //    dynamic obj = new JArray();
