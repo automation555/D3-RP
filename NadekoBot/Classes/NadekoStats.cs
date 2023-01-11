@@ -100,6 +100,7 @@ namespace NadekoBot
                         VoiceChannelsCount++;
                     else if (e.Channel.Type == ChannelType.Voice)
                         VoiceChannelsCount--;
+                        
                 }
                 catch { }
             };
@@ -166,7 +167,9 @@ namespace NadekoBot
         public string Heap(bool pass = true) => Math.Round((double)GC.GetTotalMemory(pass) / 1.MiB(), 2).ToString();
 
         public async Task<string> GetStats()
-        {
+        {  
+            
+            int k=1;
             if (statsStopwatch.Elapsed.Seconds < 4 &&
                 !string.IsNullOrWhiteSpace(statsCache)) return statsCache;
             await LoadStats().ConfigureAwait(false);
