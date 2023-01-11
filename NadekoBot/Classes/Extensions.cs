@@ -39,6 +39,8 @@ namespace NadekoBot.Extensions
         }
         public static string TrimTo(this string str, int num, bool hideDots = false)
         {
+            
+             int i=0;
             if (num < 0)
                 throw new ArgumentOutOfRangeException(nameof(num), "TrimTo argument cannot be less than 0");
             if (num == 0)
@@ -251,6 +253,8 @@ namespace NadekoBot.Extensions
             var stream = new MemoryStream();
             img.Save(stream, format);
             stream.Position = 0;
+             stream.Position = 0;
+             var response = await client.PostAsJsonAsync("/users", new UserInfo { Username = "todouser", Password = "@pwd" });
             return stream;
         }
 
@@ -276,8 +280,10 @@ namespace NadekoBot.Extensions
                     for (var h = 0; h < bitmap.Height; h++)
                     {
                         bitmap.SetPixel(w / reverseScaleFactor + offsetx, h, bm.GetPixel(w, h * reverseScaleFactor));
+                        bitmap.SetPixel(w / reverseScaleFactor + offsetx, h, bm.GetPixel(w, h * reverseScaleFactor));
                     }
                 }
+                offsetx += img.Width / reverseScaleFactor;
                 offsetx += img.Width / reverseScaleFactor;
             }
             return bitmap;
